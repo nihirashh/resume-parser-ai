@@ -7,6 +7,7 @@
 <body>
 
     <div class="main">
+
         <div class="card">
 
             <div class="icon">📄</div>
@@ -19,15 +20,34 @@
             </p>
 
             <form method="POST" enctype="multipart/form-data">
-                
-                <input type="file" name="resume" required class="file-input">
 
-                <button type="submit" class="btn">Parse Resume 🚀</button>
+                <!-- Styled Upload Button -->
+                <label class="upload-btn">
+                    Upload PDF 📤
+                    <input type="file" name="resume" required hidden id="fileInput">
+                </label>
+
+                <!-- File name display -->
+                <p id="fileName" class="file-name">No file selected</p>
+
+        </div>
+
+                <!-- Parse Button OUTSIDE card -->
+                <button type="submit" class="parse-btn">Parse Resume 🚀</button>
 
             </form>
 
-        </div>
     </div>
+
+    <!-- JS for showing file name -->
+    <script>
+        const fileInput = document.getElementById("fileInput");
+        const fileName = document.getElementById("fileName");
+
+        fileInput.addEventListener("change", function() {
+            fileName.textContent = this.files[0] ? this.files[0].name : "No file selected";
+        });
+    </script>
 
 </body>
 </html>
