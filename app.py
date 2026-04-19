@@ -1,6 +1,13 @@
 from flask import Flask, render_template, request
 import os
-from utils.parser import extract_text, extract_skills, extract_email, extract_name
+from utils.parser import (
+    extract_text,
+    extract_skills,
+    extract_email,
+    extract_name,
+    extract_phone,
+    extract_education
+)
 
 app = Flask(__name__)
 
@@ -18,21 +25,25 @@ def home():
             filepath = os.path.join(app.config["UPLOAD_FOLDER"], file.filename)
             file.save(filepath)
 
-            # Extract data
             text = extract_text(filepath)
-            skills = extract_skills(text)
-            email = extract_email(text)
+
             name = extract_name(text)
+            email = extract_email(text)
+            phone = extract_phone(text)
+            skills = extract_skills(text)
+            education = extract_education(text)
 
             return render_template(
                 "result.html",
                 name=name,
                 email=email,
-                skills=skills
+                phone=phone,
+                skills=skills,
+                education=education
             )
 
     return render_template("index.html")
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)

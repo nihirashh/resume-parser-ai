@@ -17,6 +17,7 @@
             <div class="result-box">
                 <p><b>👤 Name:</b> {{ name }}</p>
                 <p><b>📧 Email:</b> {{ email }}</p>
+                <p><b>📞 Phone:</b> {{ phone }}</p>
 
                 <p><b>🛠 Skills:</b></p>
                 <div class="skills">
@@ -24,11 +25,17 @@
                         <span>{{ skill }}</span>
                     {% endfor %}
                 </div>
+
+                <p><b>🎓 Education:</b></p>
+                <ul>
+                    {% for edu in education %}
+                        <li>{{ edu }}</li>
+                    {% endfor %}
+                </ul>
             </div>
 
         </div>
 
-        <!-- Button below -->
         <a href="/" class="result-btn">⬅ Upload Another Resume</a>
 
     </div>
