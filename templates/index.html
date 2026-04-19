@@ -9,18 +9,21 @@
     <div class="main">
         <div class="card">
 
-            <h1 class="title">
-                📄 RESUME <span>PARSER</span>
-            </h1>
+            <div class="icon">📄</div>
+
+            <h1 class="title">RESUME PARSER</h1>
 
             <p class="subtitle">
-                Upload your resume and extract key details instantly
+                Upload a PDF resume and we'll extract the key information — 
+                name, email, phone, skills, and education.
             </p>
 
             <form method="POST" enctype="multipart/form-data">
-                <input type="file" name="resume" required>
-                <br><br>
-                <button type="submit">Parse Resume 🚀</button>
+                
+                <input type="file" name="resume" required class="file-input">
+
+                <button type="submit" class="btn">Parse Resume 🚀</button>
+
             </form>
 
         </div>
