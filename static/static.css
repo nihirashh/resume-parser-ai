@@ -1,31 +1,44 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #eef2f7, #f8fbff);
     margin: 0;
-    padding: 0;
 }
 
-/* Main container */
-.container {
-    width: 400px;
-    margin: 120px auto;
+/* Full screen layout */
+.main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #4a90e2, #6fb1fc);
+}
+
+/* Card styling */
+.card {
+    width: 420px;
     padding: 30px;
     background: white;
-    border-radius: 14px;
-    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
     text-align: center;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.15);
 }
 
-/* Heading */
-h1 {
-    margin-bottom: 10px;
+/* Title styling */
+.title {
+    font-size: 42px;
+    font-weight: bold;
     color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Highlight word */
+.title span {
+    color: #4a90e2;
 }
 
 /* Subtitle */
 .subtitle {
+    color: #555;
     font-size: 14px;
-    color: #6c7a89;
     margin-bottom: 20px;
 }
 
@@ -36,15 +49,26 @@ input[type="file"] {
 
 /* Button */
 button {
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #4CAF50, #43a047);
+    padding: 12px 25px;
+    background: #4a90e2;
     color: white;
     border: none;
-    border-radius: 6px;
+    border-radius: 8px;
     font-size: 15px;
     cursor: pointer;
 }
 
 button:hover {
-    background: linear-gradient(135deg, #43a047, #388e3c);
+    background: #357abd;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .card {
+        width: 90%;
+    }
+
+    .title {
+        font-size: 30px;
+    }
 }
