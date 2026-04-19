@@ -94,3 +94,40 @@ body {
         font-size: 32px;
     }
 }
+
+/* Green pastel background only for result page */
+.result-main {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+}
+
+/* Title green */
+.success-title {
+    color: #2f855a;
+}
+
+/* Skills tags */
+.skills span {
+    display: inline-block;
+    background: #86efac;
+    color: #14532d;
+    padding: 6px 12px;
+    margin: 5px 5px 0 0;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* Result button */
+.result-btn {
+    margin-top: 25px;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #bbf7d0, #86efac);
+    color: #14532d;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.result-btn:hover {
+    background: linear-gradient(135deg, #86efac, #4ade80);
+}

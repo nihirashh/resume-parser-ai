@@ -1,21 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Resume Result</title>
+    <title>Parsed Resume</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='static.css') }}">
 </head>
 <body>
 
-    <h1>Parsed Resume Data</h1>
+    <div class="main result-main">
 
-    <div class="card">
-        <p><b>Name:</b> {{ name }}</p>
-        <p><b>Email:</b> {{ email }}</p>
-        <p><b>Skills:</b> {{ skills }}</p>
+        <div class="card">
+
+            <div class="icon">📊</div>
+
+            <h1 class="title success-title">PARSED RESULT</h1>
+
+            <div class="result-box">
+                <p><b>👤 Name:</b> {{ name }}</p>
+                <p><b>📧 Email:</b> {{ email }}</p>
+
+                <p><b>🛠 Skills:</b></p>
+                <div class="skills">
+                    {% for skill in skills %}
+                        <span>{{ skill }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Button below -->
+        <a href="/" class="result-btn">⬅ Upload Another Resume</a>
+
     </div>
-
-    <br>
-    <a href="/">⬅ Upload Another Resume</a>
 
 </body>
 </html>
